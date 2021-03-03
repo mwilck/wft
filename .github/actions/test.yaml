@@ -1,0 +1,9 @@
+name: basic-ci
+on: push
+jobs:
+  alpine32:
+    runs-on: ubuntu-20.04
+    container: i386/alpine:latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
