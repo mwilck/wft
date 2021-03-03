@@ -3,7 +3,21 @@ on: push
 jobs:
   alpine32:
     runs-on: ubuntu-20.04
+    container: i386/alpine:latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+  alpine64:
+    runs-on: ubuntu-20.04
     container: alpine:latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+  debian32:
+    runs-on: ubuntu-20.04
+    container: i386/debian:buster
     steps:
       - name: checkout
         uses: actions/checkout@v2
